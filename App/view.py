@@ -32,6 +32,7 @@ from App import controller
 from DISClib.ADT import stack
 assert config
 
+
 """
 La vista se encarga de la interacción con el usuario.
 Presenta el menu de opciones  y  por cada seleccion
@@ -44,7 +45,7 @@ operación seleccionada.
 # ___________________________________________________
 
 
-servicefile = 'bus_routes_14000.csv'
+servicefile = 'bus_routes_50.csv'
 initialStation = None
 
 # ___________________________________________________
@@ -155,6 +156,6 @@ def thread_cycle():
 
 if __name__ == "__main__":
     threading.stack_size(67108864)  # 64MB stack
-    sys.setrecursionlimit(2 ** 20)
+    sys.setrecursionlimit(2**24)
     thread = threading.Thread(target=thread_cycle)
     thread.start()

@@ -27,7 +27,7 @@
 import config as cf
 from App import model
 import csv
-
+import time as time
 """
 El controlador se encarga de mediar entre la vista y el modelo.
 Existen algunas operaciones en las que se necesita invocar
@@ -111,7 +111,12 @@ def minimumCostPaths(analyzer, initialStation):
     Calcula todos los caminos de costo minimo de initialStation a todas
     las otras estaciones del sistema
     """
-    return model.minimumCostPaths(analyzer, initialStation)
+    start_time = time.perf_counter()
+    a=model.minimumCostPaths(analyzer, initialStation)
+    stop_time = time.perf_counter()
+    delta_time = (stop_time - start_time)*10000
+    print(delta_time)
+    return a
 
 
 def hasPath(analyzer, destStation):
