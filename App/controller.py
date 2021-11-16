@@ -130,7 +130,12 @@ def minimumCostPath(analyzer, destStation):
     """
     Retorna el camino de costo minimo desde initialStation a destStation
     """
-    return model.minimumCostPath(analyzer, destStation)
+    start_time = time.perf_counter()
+    a=model.minimumCostPath(analyzer, destStation)
+    stop_time = time.perf_counter()
+    delta_time = (stop_time - start_time)*10000
+    print(delta_time)
+    return a
 
 
 def servedRoutes(analyzer):
